@@ -5,6 +5,7 @@ import CheckoutSteps from '../components/CheckoutSteps';
 import { createOrder } from '../actions/orderActions';
 
 function PlaceOrderScreen(props) {
+  
   const cart = useSelector(state => state.cart);
   const orderCreate = useSelector(state => state.orderCreate);
   const { loading, success, error, order } = orderCreate;
@@ -36,6 +37,7 @@ function PlaceOrderScreen(props) {
       taxPrice, totalPrice
     }));
   }
+  console.log("dispatching order")
   useEffect(() => {
     if (success) {
       props.history.push("/order/" + order._id);
@@ -53,7 +55,7 @@ function PlaceOrderScreen(props) {
           </h3>
           <div>
             {cart.shipping.address}, {cart.shipping.city},
-          {cart.shipping.postalCode}, {cart.shipping.country},
+          {cart.shipping.phone}, {cart.shipping.country},
           </div>
         </div>
         <div>

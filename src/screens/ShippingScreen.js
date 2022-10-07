@@ -15,7 +15,7 @@ function ShippingScreen(props) {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(saveShipping({ address, city,  country, phone }));
+    dispatch(saveShipping({ address, city, country, phone }));
     props.history.push('payment');
   }
   return <div>
@@ -51,7 +51,7 @@ function ShippingScreen(props) {
           </li>
 
           <li>
-            <label htmlFor="country">
+            <label htmlFor="phone">
               Phone 
           </label>
             <input type="text" name="phone" id="phone" onChange={(e) => setPhone(e.target.value)}>
